@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Developer MiniWorld 2.0</title>
+  <link href="./css/app.css" rel="stylesheet">
+    <!-- /* ── Block Library Modal ── */ -->
+  <link rel="stylesheet" href="./css/data_block.css">
+  <link rel="stylesheet" href="./css/mobile.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+  <div id="app">
+    <div class="menu-wrapper">
+      <ul class="menu-list clearfix">
+        <li class="menu-item">
+          <div class="theme-wrapper menu-item-wrapper" id="themeWrapper">
+            <button class="theme-btn menu-item-btn" id="themeBtn">Theme</button>
+            <div class="theme-inner menu-item-inner" id="themeInner">
+              <ul class="theme-list">
+                <li class="theme-item" data-theme="textmate">textmate</li>
+                <li class="theme-item" data-theme="monokai">monokai</li>
+                <li class="theme-item" data-theme="eclipse">eclipse</li>
+                <li class="theme-item" data-theme="ambiance">ambiance</li>
+                <li class="theme-item" data-theme="sqlserver">sqlserver</li>
+                <li class="theme-item" data-theme="github">github</li>
+                <li class="theme-item" data-theme="solarized_light">solarized_light</li>
+                <li class="theme-item" data-theme="solarized_dark">solarized_dark</li>
+                <li class="theme-item" data-theme="tomorrow_night_bright">tomorrow_night_bright</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="menu-item">
+          <div class="insert-wrapper menu-item-wrapper" id="insertWrapper">
+            <button class="insert-btn menu-item-btn" id="insertBtn">Insert</button>
+            <div class="insert-inner menu-item-inner not-focus-hide en" id="insertInner">
+              <div class="insert-inner-top" id="insertInnerTop"><i class="close-icon"></i></div>
+              <div class="insert-inner-content">
+                <ul class="insert-list parent">
+                  <li class="insert-item" data-insert-type="variable">Create variable</li>
+                  <li class="insert-item" data-insert-type="func">Create Function</li>
+                  <li class="insert-item" data-insert-type="assert">Create process statement</li>
+                  <li class="insert-item" data-insert-type="loop">Create loop statement</li>
+                  <li class="insert-item" data-insert-type="table">Create table</li>
+                </ul>
+                <ul class="insert-list child" data-parent-type="variable" style="display:none;">
+                  <li class="insert-item" data-insert-type="variable-global">Global variable</li>
+                  <li class="insert-item" data-insert-type="variable-local">Local variable</li>
+                </ul>
+                <ul class="insert-list child" data-parent-type="func" style="display:none;">
+                  <li class="insert-item" data-insert-type="func-global">Global Function</li>
+                  <li class="insert-item" data-insert-type="func-local">Local Function</li>
+                </ul>
+                <ul class="insert-list child" data-parent-type="assert" style="display:none;">
+                  <li class="insert-item" data-insert-type="assert-if">if statement</li>
+                  <li class="insert-item" data-insert-type="assert-ifelse">if……else statement</li>
+                  <li class="insert-item" data-insert-type="assert-ifelseif">if……elseif statement</li>
+                </ul>
+                <ul class="insert-list child" data-parent-type="loop" style="display:none;">
+                  <li class="insert-item" data-insert-type="loop-for">for statement</li>
+                  <li class="insert-item" data-insert-type="loop-while">while statement</li>
+                  <li class="insert-item" data-insert-type="loop-repeatUntil">repeat……until statement</li>
+                </ul>
+                <ul class="insert-list child" data-parent-type="table" style="display:none;">
+                  <li class="insert-item" data-insert-type="table-global">Global table</li>
+                  <li class="insert-item" data-insert-type="table-local">Local table</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu-item">
+          <div class="font-wrapper menu-item-wrapper" id="fontWrapper">
+            <button class="font-btn menu-item-btn" id="fontBtn">Fonts</button>
+            <div class="font-inner menu-item-inner" id="fontInner">
+              <ul class="font-list">
+                <li class="font-item" data-size="12px">12px</li>
+                <li class="font-item" data-size="13px">13px</li>
+                <li class="font-item" data-size="14px">14px</li>
+                <li class="font-item" data-size="15px">15px</li>
+                <li class="font-item" data-size="16px">16px</li>
+                <li class="font-item" data-size="18px">18px</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class="menu-item">
+          <div class="idlib-wrapper menu-item-wrapper" id="idlibWrapper">
+            <button class="idlib-btn menu-item-btn" id="idlibBtn">ID Library</button>
+            <div class="idlib-inner menu-item-inner" id="idlibInner">
+              <ul class="idlib-list">
+                <li class="idlib-item" data-type="1" id="idlibBlockItem">Block</li>
+                <li class="idlib-item" data-type="2">Item</li>
+                <li class="idlib-item" data-type="3">Creature</li>
+                <li class="idlib-item" data-type="4">Effect</li>
+                <li class="idlib-item" data-type="5">Sound</li>
+                <li class="idlib-item" data-type="6">Buff</li>
+                <li class="idlib-item" data-type="8">Action</li>
+                <li class="idlib-item" data-type="9">Product</li>
+                <li class="idlib-item" data-type="10">Model</li>
+                <li class="idlib-item" data-type="11">Picture</li>
+                <li class="idlib-item" data-type="12">Interface</li>
+                <li class="idlib-item" data-type="13">Element</li>
+                <li class="idlib-item" data-type="14">Page Status</li>
+                <li class="idlib-item" data-type="15">Display Board</li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div id="codeEditor" class="code-editor"></div>
+    <div id="devWikiMask" class="dev-wiki-mask"></div>
+
+    <div id="searchIdWrapper" class="search-id-wrapper">
+      <div id="searchIdTitle" class="search-id-title">
+        <span>ID Search Tool</span>
+        <i class="close-icon" id="searchIdCloseIcon"></i>
+      </div>
+      <div class="search-id-inner">
+        <div id="searchIdInpWrapper" class="search-id-inpwrapper">
+          <input type="text" class="search-id-input" placeholder="please enter Block ID or Name" id="searchIdInput">
+          <div class="history-list" id="searchIdHistoryList"></div>
+        </div>
+        <div id="searchIdListContainer" class="search-id-container">
+          <dl id="searchIdList"></dl>
+        </div>
+      </div>
+    </div>
+
+    <div id="devWiki" class="dev-wiki">
+      <div id="devWikiBar" class="dev-wiki-bar"></div>
+      <iframe src="https://developers.miniworldgame.com/wiki/" frameborder="0"></iframe>
+      <button type="button" id="toggleWikiBtn" class="btn toggle-wiki-btn">Wiki</button>
+    </div>
+  </div>
+
+  <!-- ══════════════ BLOCK LIBRARY MODAL ══════════════ -->
+  <div id="blockLibraryOverlay">
+    <div id="blockLibraryModal">
+
+      <div class="bl-header">
+        <span class="bl-header-title" id="blTitle">BLOCK LIBRARY</span>
+
+        <!-- 3 language pills -->
+        <div class="bl-lang-switcher">
+          <button class="bl-lang-pill active" data-lang="en">EN</button>
+          <button class="bl-lang-pill"        data-lang="vi">VI</button>
+          <button class="bl-lang-pill"        data-lang="zh">中文</button>
+        </div>
+
+        <button class="bl-close-btn" id="blCloseBtn">✕</button>
+      </div>
+
+      <div class="bl-main-body">
+        <div class="bl-sidebar">
+          <div class="bl-nav-item active" data-tab="plant">Plant Blocks</div>
+          <div class="bl-nav-item"        data-tab="liquid">Liquid Blocks</div>
+          <div class="bl-nav-item"        data-tab="nature">Nature Blocks</div>
+          <div class="bl-nav-item"        data-tab="decor">Decor Blocks</div>
+          <div class="bl-nav-item"        data-tab="function">Function Blocks</div>
+        </div>
+        <div class="bl-scroll-area" id="blScrollArea">
+          <div class="bl-grid" id="blGrid"></div>
+        </div>
+      </div>
+
+      <div class="bl-footer">
+        <span class="bl-selected-info" id="blSelectedInfo"></span>
+        <button class="bl-btn-add" id="blAddBtn">INSERT ID</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="blTooltip"></div>
+
+  <script src="./js/datapack.js"></script>
+  <script src="/js/data_block.js"></script>
+  <script src="./js/insertCodeConfig.js"></script>
+  <script type="text/javascript" src="./js/app.js"></script>
+  <script src="./js/lang.js"></script>
+  <script src="./js/mobile_toolbar.js"></script>
+</body>
+</html>
